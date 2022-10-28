@@ -1,11 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
 
-import catsReducer from "./features/cats/catsSlice";
+import productsReducer from "./features/productsSlice";
 
-const store = configureStore({
-  reducer: {
-    cats: catsReducer,
-  },
+const rootReducer = combineReducers({
+  products: productsReducer,
 });
 
-export default store;
+export default rootReducer;

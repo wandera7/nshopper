@@ -1,8 +1,20 @@
-
+import React from "react";
+import { useSelector } from "react-redux";
+import Products from "./features/products";
 function App() {
+  const products= useSelector((state)=>state.products.items);
+  console.log(products);
+
   return (
     <div className="App">
-    <h1>J ROCK</h1>
+    {products.map((p,index)=>{
+      return(
+        <div key={index}>
+          <ul><li>{p}</li></ul>
+        </div>
+      )
+    })}
+    <Products/>
     </div>
   );
 }
